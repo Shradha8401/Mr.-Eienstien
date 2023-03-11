@@ -8,18 +8,16 @@ html, body {
     height: auto;
     background-color:rgb(100, 88, 88);
     display: grid;
-    grid-template-columns: 0.4fr 1fr 1.5fr;
-    grid-template-rows: 0.1fr 0.5fr 0.1fr 0.5fr 0.7fr 0.1fr 0.7fr 0.7fr 0.07fr;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 0.fr 1fr 1fr 1fr 1fr 1fr 1fr 0.25fr;
     grid-template-areas:
-    "header header header"
-    "img about about"
-    "h1 h1 h1"
-    "paper paper paper"
-    "experience experience hobbies"
-    "galleryHeading galleryHeading galleryHeading"
-    "gallery gallery gallery"
-    "blog blog blog"
-    "footer footer footer"
+    "header header"
+    "about about"
+    "paper paper"
+    "experience hobbies"
+    "gallery gallery"
+    "blog blog"
+    "footer footer"
     ; 
     grid-gap: 30px;
     
@@ -98,6 +96,17 @@ h1{
     grid-area: img;
 }
 
+#about-cont{
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+}
+
+#about-cont > p{
+    width: 70%;
+    text-align: justify;
+}
 .paperDivClass{
     height: 200px;
     width: 160px;
@@ -149,10 +158,6 @@ h4{
     width: 140px;
     margin: 10px;
 }
-#galleryHeadingID{
-    grid-area: galleryHeading;
-    text-align: center;
-}
 .galleryImages{
     height: 200px;
     width: 140px;
@@ -167,8 +172,11 @@ h4{
     padding: 20px;
     border:4px outset gray;
 }
-#PaperSec{
+#paper-sec{
     grid-area: paper;
+
+}
+#PaperSec{
     display: flex;
     flex-wrap: wrap;
     margin: 10px;
@@ -178,6 +186,8 @@ h4{
     background-color: rgb(48, 46, 46);
     border:6px outset gray;
     border-radius: 10px;
+    justify-content: center;
+    align-items: center;
     
 }
 
@@ -188,6 +198,7 @@ h4{
     margin: 20px;
     padding: 20px;
     border:4px outset gray;
+    text-align: justify;
     
 }
    
@@ -199,6 +210,7 @@ h4{
     margin: 20px;
     padding: 20px;
     border:4px outset gray;
+    text-align: justify;
    
 }
 #blog{
@@ -209,11 +221,11 @@ h4{
     padding: 20px;
     border:4px outset gray;
     float: right;
+    margin-bottom: 1px;
+    text-align: justify ;
 }
 #gallery{
     grid-area: gallery;
-    display: flex;
-    flex-wrap: wrap;
     margin: 10px;
     height: auto;
     width: auto;
@@ -221,6 +233,11 @@ h4{
     background-color: rgb(39, 37, 37);
     border:7px outset gray;
     border-radius: 10px;
+    text-align: center;
+}
+
+#galleryHeadingID{
+    text-align: center;
 }
 
 
@@ -230,34 +247,31 @@ footer{
     height:50px;
     background-color: black;
     border:3px groove grey;
-    position: fixed;
-    bottom: 0;
+    /* position: fixed;
+    bottom: 0; */
 }
 
 @media only screen and (max-width:500px){ /* if the width is less than 500px*/
     #Container{
         height:auto;
-        grid-template-columns: 1fr;
-        grid-template-rows: 0.02fr 0.2fr 0.2fr 0.1fr 1fr 0.4fr 0.5fr 0.1fr 1fr 0.5fr 0.1fr;
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: 0.02fr 0.2fr 0.2fr 0.1fr 0.1fr 0.4fr 0.25fr 0fr;
         grid-template-areas:
-        "header"
-        "img"
-        "about"
-        "h1"
-        "paper"
-        "experience"
-        "hobbies"
-        "galleryHeading"
-        "gallery"
-        "blog"
-        "footer";
+        "header header"
+        "about about"
+        "paper paper"
+        "experience experience"
+        "hobbies hobbies"
+        "gallery gallery"
+        "blog blog"
+        "footer footer";
         grid-gap:0px;
     }
     .menu {
         display: none;
         float: right;
         position: absolute;
-        top:56.5%;
+        top:64.5%;
         right:0%;
         background-color: #181717;
     }
@@ -281,4 +295,20 @@ footer{
         transition: transform 0.5s ease-in-out;
         transform: translateY(-100%);
       }
+
+      /* About section */
+
+      #about-cont{
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+
+    #about-cont > p{
+        width: 100%;
+    }
+
+    #blog{
+        margin-bottom: 10px;
+    }
 }
