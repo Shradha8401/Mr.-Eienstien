@@ -29,6 +29,7 @@ fetch('https://upadhayay.github.io/db.json')
             readMore.setAttribute("id","readMoreID");
             ele.appendChild(readMore);
             document.getElementById("PaperSec").appendChild(ele);
+            
             ele.classList.add("paperDivClass");
              
         }
